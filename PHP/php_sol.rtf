@@ -1,0 +1,226 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}{\f2\fnil\fcharset1 Segoe UI Symbol;}{\f3\fnil\fcharset2 Symbol;}}
+{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 A loosely typed language such as PHP is a language that does not require you to declare a variable type when declaring a variable. ... Languages such as C# and others are strictly typed, meaning that variables MUST declare type at the time the variable is declared, and that type is strictly enforced.\par
+\par
+Identical:\par
+$a === $b\par
+TRUE if $a is equal to $b, and they are of the same type. (introduced in PHP 4)\par
+Equal:\par
+$a == $b\par
+TRUE if $a is equal to $b after type juggling.\par
+\par
+Escape sequences are started with escaping character backslash (\\) and there are two types of escape sequences. The two types are distinguished based on character following the escape character backslash, that is based on whether it is an alphanumeric or special character.\par
+\par
+php_escape_sequences\par
+\par
+If it is alphanumeric, the escape sequence on the whole including the backslash is given a meaning. For example, it can be \\n \\r \\t etc.\par
+
+\pard\sa200\sl276\slmult1 If it is a special character, then the character following the backslash is parsed as it is in that location. For example, if we want to include a quote (\ldblquote ) inside an echo statement/string then we should use \\\rdblquote\par
+You escape a character by typing a "slash" before it. Like this:\par
+\par
+$string = 'John\\'s Car';\par
+If your PHP script is not returning the characters it should do, then you may need to use the slash to escape them.\par
+\par
+You also need to escape certain characters when working with databases\par
+, it is for escaping characters from being parsed as it is, literally.\par
+\\' \f1\endash  To escape ' within single quoted string.\par
+\\\rdblquote  \endash  To escape \ldblquote  within double quoted string.\par
+\\\\ \endash  To escape the backslash.\par
+\\$ \endash  To escape $.\par
+\\n \endash  To add line breaks between string.\par
+\\t \endash  To add tab space.\par
+\\r \endash  For carriage return.\par
+\par
+\par
+Several predefined variables in PHP are "superglobals", which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.\par
+\par
+The PHP superglobal variables are:\par
+\par
+$GLOBALS\par
+$_SERVER\par
+$_REQUEST\par
+$_POST\par
+$_GET\par
+$_FILES\par
+$_ENV\par
+$_COOKIE\par
+$_SESSION\par
+\par
+If you generate data within a function, you can convey the data to the rest of the program by returning a value or modifying a global variable.\par
+\par
+For Loop:\par
+\par
+The for loop is used when you know in advance how many times the script should run.\par
+For loop used according to condition.\par
+Loop working at the end of given condition.\par
+Syntax:\par
+\par
+for (init counter; test counter; increment counter) \{\par
+ code to be executed;\par
+\}\par
+\par
+init counter: Initialize the loop counter value\par
+test counter: Evaluated for each loop iteration. If it evaluates to TRUE, the loop continues. If it evaluates to FALSE, the loop ends.\par
+increment counter: Increases the loop counter value\par
+For Each Loop:\par
+\par
+Foreach loop used when you have an array, without array it's not worked.\par
+Loop working at the end of array count.\par
+The foreach loop works only on arrays, and is used to loop through each key/value pair in an array.\par
+Syntax:\par
+\par
+foreach ($array as $value) \{\par
+ code to be executed;\par
+\}\par
+\par
+For every loop iteration, the value of the current array element is assigned to $value and the array pointer is moved by one, until it reaches the last array element.\f0\par
+
+\pard\sa200\sl276\slmult1\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 To reset php's internal pointer into an array back to the first element, call the reset function.\par
+{\pntext\f3\'B7\tab}reset() rewinds array's internal pointer to the first element and returns the value of the first array element.\par
+{\pntext\f3\'B7\tab}reset($array);\par
+{\pntext\f3\'B7\tab}Unary Operators\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Unary operators are operators that only deal with one argument (which is generally a single variable).  In PHP, there's only a few of these as shown in Table 1:\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Unary Operator\tab Use\par
+{\pntext\f3\'B7\tab}!\tab negation\par
+{\pntext\f3\'B7\tab}++\tab increment by 1\par
+{\pntext\f3\'B7\tab}--\tab decrement by 1\par
+{\pntext\f3\'B7\tab}Binary Operators\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Binary operators are operators that deal with two arguments, both generally being either variables or constants.  Table 2 shows some examples of binary operators found in PHP:\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Operator\tab Use\par
+{\pntext\f3\'B7\tab}+\tab addition\par
+{\pntext\f3\'B7\tab}-\tab subtraction\par
+{\pntext\f3\'B7\tab}*\tab multiplication\par
+{\pntext\f3\'B7\tab}/\tab division\par
+{\pntext\f3\'B7\tab}%\tab remainder division\par
+{\pntext\f3\'B7\tab}=\tab assignment\par
+{\pntext\f3\'B7\tab}==\tab boolean equality comparision\par
+{\pntext\f3\'B7\tab}>\tab boolean greater than\par
+{\pntext\f3\'B7\tab}<\tab boolean less than\par
+{\pntext\f3\'B7\tab}&&\tab boolean AND\par
+{\pntext\f3\'B7\tab}||\tab boolean OR\par
+{\pntext\f3\'B7\tab}\b Ternary Operators\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Tertiary operators are operators that deal with three arguments which can be anything from a constant to a complete boolean expression.\b0\par
+{\pntext\f3\'B7\tab}<argument 1> ? <argument 2> : <argument 3>[/CODE]\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Argument 1 is generally a boolean expression of some sort, meaning that it can be evaluated to either true or false.  If it is evaluated to true, then argument 2 is executed.  If false, then argument 3 is used.  \par
+{\pntext\f3\'B7\tab}The explode() function breaks a string into an array.\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Note: The "separator" parameter cannot be an empty string.\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Note: This function is binary-safe.\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Syntax\par
+{\pntext\f3\'B7\tab}explode(separator,string,limit)\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Parameter\tab Description\par
+{\pntext\f3\'B7\tab}separator\tab Required. Specifies where to break the string\par
+{\pntext\f3\'B7\tab}string\tab Required. The string to split\par
+{\pntext\f3\'B7\tab}limit\tab Optional. Specifies the number of array elements to return.\par
+{\pntext\f3\'B7\tab}Possible values:\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Greater than 0 - Returns an array with a maximum of limit element(s)\par
+{\pntext\f3\'B7\tab}Less than 0 - Returns an array except for the last -limit elements()\par
+{\pntext\f3\'B7\tab}0 - Returns an array with one element\par
+{\pntext\f3\'B7\tab}Technical Details\par
+{\pntext\f3\'B7\tab}Return Value:\tab Returns an array of strings\par
+{\pntext\f3\'B7\tab}\b <?php\par
+{\pntext\f3\'B7\tab}$str = "Hello world. It's a beautiful day.";\par
+{\pntext\f3\'B7\tab}print_r (explode(" ",$str));\par
+{\pntext\f3\'B7\tab}?>\b0\par
+{\pntext\f3\'B7\tab}when using require that it is a statement, not a function. \par
+{\pntext\f3\'B7\tab}You can include the content of a PHP file into another PHP file before the server executes it. There are two PHP functions which can be used to included one PHP file into another PHP file.\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}The include() Function\par
+{\pntext\f3\'B7\tab}The require() Function\par
+{\pntext\f3\'B7\tab}The include() Function\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}The include() function takes all the text in a specified file and copies it into the file that uses the include function. If there is any problem in loading a file then the include() function generates a warning but the script will continue execution.\par
+{\pntext\f3\'B7\tab}include("menu.php");\par
+{\pntext\f3\'B7\tab}The require() function takes all the text in a specified file and copies it into the file that uses the include function. If there is any problem in loading a file then the require() function generates a fatal error and halt the execution of the script.\par
+{\pntext\f3\'B7\tab}require("xxmenu.php");\par
+{\pntext\f3\'B7\tab}\b PHP return statement immediately terminates the execution of a function when it is called from within that function.\par
+{\pntext\f3\'B7\tab}\b0\par
+{\pntext\f3\'B7\tab}This function is also used to terminate the execution of an eval() function or script file.\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}\b If this function is called from a global scope, the function stops the execution of the current script. If the current script file was included using include() or required(), then control goes back to the calling file.\b0\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Syntax\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}return expression \par
+{\pntext\f3\'B7\tab}A web server (such as Apache), a server-side scripting language (PHP), a database (MySQL), and a client-side scripting language (JavaScript).\par
+{\pntext\f3\'B7\tab}PHP echo and print Statements\par
+{\pntext\f3\'B7\tab}echo and print are more or less the same. They are both used to output data to the screen.\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}\b The differences are small: echo has no return value while print has a return value of 1 so it can be used in expressions. echo can take multiple parameters (although such usage is rare) while print can take one argument. echo is marginally faster than print.\b0\par
+{\pntext\f3\'B7\tab}A constant is an identifier (name) for a simple value. The value cannot be changed during the script.\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}A valid constant name starts with a letter or underscore (no $ sign before the constant name).\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Note: Unlike variables, constants are automatically global across the entire script.\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Create a PHP Constant\par
+{\pntext\f3\'B7\tab}To create a constant, use the define() function.\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}Syntax\par
+{\pntext\f3\'B7\tab}define(name, value, case-insensitive)\par
+{\pntext\f3\'B7\tab}Parameters:\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}name: Specifies the name of the constant\par
+{\pntext\f3\'B7\tab}value: Specifies the value of the constant\par
+{\pntext\f3\'B7\tab}case-insensitive: Specifies whether the constant name should be case-insensitive. Default is false\par
+{\pntext\f3\'B7\tab}\b A hyphen is reserved for the subtraction operators. A construct like $currentuser would be harder to interpret if hyphens were also allowed in variable names and, in any case, would lead programs to be ambiguous.\b0\par
+{\pntext\f3\'B7\tab}sort() - sort arrays in ascending order\par
+{\pntext\f3\'B7\tab}rsort() - sort arrays in descending order\par
+{\pntext\f3\'B7\tab}asort() - sort associative arrays in ascending order, according to the value\par
+{\pntext\f3\'B7\tab}ksort() - sort associative arrays in ascending order, according to the key\par
+{\pntext\f3\'B7\tab}arsort() - sort associative arrays in descending order, according to the value\par
+{\pntext\f3\'B7\tab}krsort() - sort associative arrays in descending order, according to the key\par
+{\pntext\f3\'B7\tab}\b Zero is false, nonzero is true.\b0\par
+{\pntext\f3\'B7\tab}\b When converting to boolean, the following values are considered FALSE:\par
+{\pntext\f3\'B7\tab}\par
+{\pntext\f3\'B7\tab}the boolean FALSE itself\par
+{\pntext\f3\'B7\tab}the integer 0 (zero)\par
+{\pntext\f3\'B7\tab}the float 0.0 (zero)\par
+{\pntext\f3\'B7\tab}the empty string, and the string '0'\par
+{\pntext\f3\'B7\tab}an array with zero elements\par
+{\pntext\f3\'B7\tab}an object with zero member variables (PHP 4 only)\par
+{\pntext\f3\'B7\tab}the special type NULL (including unset variables)\par
+{\pntext\f3\'B7\tab}SimpleXML objects created from empty tags\b0\par
+
+\pard\sa200\sl276\slmult1\par
+PHP each() Function\par
+\f2\u10094?\f0  PHP Array Reference\par
+\par
+Example\par
+Return the current element key and value, and move the internal pointer forward:\par
+\b The extract() function imports variables into the local symbol table from an array.\par
+\par
+This function uses array keys as variable names and values as variable values. For each element it will create a variable in the current symbol table.\par
+\par
+This function returns the number of variables extracted on success.\par
+\par
+Syntax\par
+extract(array,extract_rules,prefix)\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 the first, auto_prepend_file, defines a file to automatically always be executed before your other PHP code. The other directive, auto_append_file, similarly defines a file to automatically always be executed after your other PHP code.\par
+
+\pard\sa200\sl276\slmult1\par
+\ul\b0 The fopen() function opens a file or URL.\par
+\par
+If fopen() fails, it returns FALSE and an error on failure. You can hide the error output by adding an '@' in front of the function name.\par
+\par
+Syntax\par
+fopen(filename,mode,include_path,context)\par
+
+\pard\sa200\sl276\slmult1\ulnone\b\par
+\b0\par
+\par
+}
+ 
